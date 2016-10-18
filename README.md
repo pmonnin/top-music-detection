@@ -1,4 +1,4 @@
-# top-music detection
+# top-music-detection
 
 ## Purpose
 
