@@ -1,0 +1,23 @@
+.content-cell
+{
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	/*margin: auto;*/
+}
+
+.disclaimer
+{
+	font-style: italic;
+}
+
+pre
+{
+	text-align: left;
+}
+
+.gui-instruction
+{
+	font-style: italic;
+}
