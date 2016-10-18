@@ -12,6 +12,7 @@
 
         <script src="http://alexgorbatchev.com/pub/sh/current/scripts/shCore.js" type="text/javascript"></script>
         <script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushJava.js"></script>
+        <script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushBash.js"></script>
         <link href="http://alexgorbatchev.com/pub/sh/current/styles//shCore.css" rel="stylesheet" type="text/css" />
         <link href="http://alexgorbatchev.com/pub/sh/current/styles/shThemeDefault.css" rel="stylesheet" type="text/css" />
 
@@ -56,9 +57,8 @@
 				            <h4>Scala version</h4>
 
 				            <p>This library has been tested with the Scala version 2.11. To make sure the correct Scala version is installed on your computer, please run the following command in a terminal:</p>
-				            <pre>
-				            	scala -version
-				            </pre>
+				            <pre class="brush: shell">
+				            	scala -version</pre>
 
 				         	<h4>Installation on ScalaIDE</h4>
 
@@ -94,10 +94,45 @@
 				<section class="mdl-layout__tab-panel" id="scroll-tab-3">
 					<div class="mdl-grid">
 						<div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+
 						<div class="mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col content-cell">
-				            <h3>API Documentation</h3>
-				            
+							<div class="demo-crumbs mdl-color-text--grey-500">
+				            	com.tncy.top.files
+				            </div>
+				            <h3>Wav Wrapper</h3>
+				            <p>
+				            	The WavWrapper represents a wrapper class for wav objects.
+				            </p>
+
+				            <p>
+					            The path of the wav file (fileName) has to be a .wav file.
+				            </p>
+
+				            <p>
+				            	The wav is represented as an array of arrays of int.<br />
+				            	The first array contains the sample rate, the number of channels and the number of frames.<br />
+				            	Each one of the next arrays represents a channel containing integers representing the amplitude at each frame.
+				            </p>
+
+							<pre class="brush: java">
+							    // Imports the API library
+							 	import com.tncy.top.files.WavWrapper;
+							  
+							    // Source wav file
+							    var fileName : String = "sampleMusic.wav";
+							    
+							    // Loads wrapped wav
+							    var wrappedWav : WavWrapper = new WavWrapper(fileName);
+							    // Get the music content
+							    var wav2D : Array[Array[Int]] = wrappedWav.getWav();
+
+							    // Prints the wav's sample rate, number of channels and number of frames
+							    println("The music's sample rate is: " + wav2D[0][0] + " frames per second.");
+							    println("The music's number of channels is: " + wav2D[0][1] + " channels.");
+							    println("The music's number of frames is: " + wav2D[0][2] + " frames.");
+							</pre>
 				        </div>
+
 				        <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
 					</div>
 				</section>
