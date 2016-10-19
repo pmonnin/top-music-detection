@@ -105,7 +105,7 @@
 				            </p>
 
 				            <p>
-					            The path of the wav file (fileName) has to be a .wav file.
+					            The path of the wav file (filePath) has to be a .wav file.
 				            </p>
 
 				            <p>
@@ -119,17 +119,48 @@
 							 	import com.tncy.top.files.WavWrapper;
 							  
 							    // Source wav file
-							    var fileName : String = "sampleMusic.wav";
+							    var filePath : String = "sampleMusic.wav";
 							    
 							    // Loads wrapped wav
-							    var wrappedWav : WavWrapper = new WavWrapper(fileName);
-							    // Get the music content
+							    var wrappedWav : WavWrapper = new WavWrapper(filePath);
+							    // Gets the music content
 							    var wav2D : Array[Array[Int]] = wrappedWav.getWav();
 
 							    // Prints the wav's sample rate, number of channels and number of frames
 							    println("The music's sample rate is: " + wav2D[0][0] + " frames per second.");
 							    println("The music's number of channels is: " + wav2D[0][1] + " channels.");
 							    println("The music's number of frames is: " + wav2D[0][2] + " frames.");
+							</pre>
+
+							<h3>Utils / listFiles</h3>
+
+							<p>
+							The Utils class provides the function listFiles, which lists the files of a directory.
+							</p>
+
+							<p>
+							Its argument, the path of the directory (directoryPath), can be a relative or an absolute path.
+							</p>
+
+							<p>
+							The returned value is an array of Strings containing the name (and not the path) of each file in the directory. 
+							If the directory does not exist, the function returns an empty array.
+							</p>
+
+							<pre class="brush: scala">
+							// Imports the API library
+							import com.tncy.top.files.Utils;
+
+							// Directory path
+							var directoryPath : String = "MusicsDirectoryPath";
+
+							// Gets the array of files
+							var files : Array[String] = Utils.listFiles(directoryPath);
+							    
+							// Prints the name of the first file of the directory, and its path
+							if (files.length > 0){
+							      println("The first file's name is : " + files(0) + " and its path is " + directoryPath + "/" + files(0));
+							}
 							</pre>
 				        </div>
 
