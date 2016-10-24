@@ -127,15 +127,15 @@
 							    var wav2D : Array[Array[Int]] = wrappedWav.getWav();
 
 							    // Prints the wav's sample rate, number of channels and number of frames
-							    println("The music's sample rate is: " + wav2D[0][0] + " frames per second.");
-							    println("The music's number of channels is: " + wav2D[0][1] + " channels.");
-							    println("The music's number of frames is: " + wav2D[0][2] + " frames.");
+							    println("The music's sample rate is: " + wav2D(0)(0) + " frames per second.");
+							    println("The music's number of channels is: " + wav2D(0)(1) + " channels.");
+							    println("The music's number of frames is: " + wav2D(0)(2) + " frames.");
 							</pre>
 
 							<h3>Utils / listFiles</h3>
 
 							<p>
-							The Utils class provides the function listFiles, which lists the files of a directory.
+							The Utils class provides the function listFiles, which lists the files and folders of a directory.
 							</p>
 
 							<p>
@@ -143,7 +143,7 @@
 							</p>
 
 							<p>
-							The returned value is an array of Strings containing the name (and not the path) of each file in the directory. 
+							The returned value is an array of Strings containing the name (and not the path) of each file or folder in the directory. 
 							If the directory does not exist, the function returns an empty array.
 							</p>
 
@@ -154,10 +154,10 @@
 							// Directory path
 							var directoryPath : String = "MusicsDirectoryPath";
 
-							// Gets the array of files
+							// Gets the array of files and folders
 							var files : Array[String] = Utils.listFiles(directoryPath);
 							    
-							// Prints the name of the first file of the directory, and its path
+							// Prints the name of the first file or folder of the directory, and its path
 							if (files.length > 0){
 							      println("The first file's name is : " + files(0) + " and its path is " + directoryPath + "/" + files(0));
 							}
